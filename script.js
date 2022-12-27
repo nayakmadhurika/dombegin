@@ -38,3 +38,15 @@ items[2].style.backgroundColor = 'green';
 for(var i = 0; i < items.length; i++){
     items[i].style.fontWeight = 'bold';
 }
+
+//get element by tagname //
+var li = document.getElementsByTagName('li');
+li[1].textContent = 'hello 2';
+li[1].style.fontWeight = 'bold';
+li[1].style.backgroundColor = 'yellow';
+li[2].style.backgroundColor = 'green';
+
+
+for(var i = 0; i < li.length; i++){
+    li[i].style.fontWeight = 'bold';
+}
