@@ -28,25 +28,31 @@ var header = document.getElementById('main-header');
 
 
 //get element by class name
-var items = document.getElementsByClassName('list-group-item');
-items[1].textContent = 'hello 2';
-items[1].style.fontWeight = 'bold';
-items[1].style.backgroundColor = 'yellow';
-items[2].style.backgroundColor = 'green';
+// var items = document.getElementsByClassName('list-group-item');
+// items[1].textContent = 'hello 2';
+// items[1].style.fontWeight = 'bold';
+// items[1].style.backgroundColor = 'yellow';
+// items[2].style.backgroundColor = 'green';
 
 
-for(var i = 0; i < items.length; i++){
-    items[i].style.fontWeight = 'bold';
-}
+// for(var i = 0; i < items.length; i++){
+//     items[i].style.fontWeight = 'bold';
+// }
 
-//get element by tagname //
-var li = document.getElementsByTagName('li');
-li[1].textContent = 'hello 2';
-li[1].style.fontWeight = 'bold';
-li[1].style.backgroundColor = 'yellow';
-li[2].style.backgroundColor = 'green';
+// //get element by tagname //
+// var li = document.getElementsByTagName('li');
+// li[1].textContent = 'hello 2';
+// li[1].style.fontWeight = 'bold';
+// li[1].style.backgroundColor = 'yellow';
+// li[2].style.backgroundColor = 'green';
 
 
-for(var i = 0; i < li.length; i++){
-    li[i].style.fontWeight = 'bold';
-}
+// for(var i = 0; i < li.length; i++){
+//     li[i].style.fontWeight = 'bold';
+// }
+
+var secondItem = document.querySelector('.list-group-item:nth-child(2)');
+secondItem.style.backgroundColor = 'green';
+
+var thirdItem = document.querySelector('.list-group-item:nth-child(3)');
+thirdItem.style.display = 'none';
