@@ -1,25 +1,28 @@
-// function storage(event){
-//     event.preventDefault();
-//     const name=event.target.username.value;
-//     const email=event.target.emailId.value;
-//     const number=event.target.phoneno.value;
-//     localStorage.setItem('name',name);
-//     localStorage.setItem('emailId',email);
-//     localStorage.setItem('PhoneNo',number);
-//     }
-
-
 function storage(event){
+    event.preventDefault();
 //Get the input values
 let username = document.getElementById('username').value;
 let email = document.getElementById('email').value;
 
 //Create a JSON object
-let userDetails = {
+let obj = {
     "username" : username,
     "email" : email
 };
 
 //Store the user details in localstorage
-localStorage.setItem('user', JSON.stringify(userDetails));
+localStorage.setItem(obj.email, JSON.stringify(obj));
+localStorage.getItem(obj.email);
+
+let list = document.querySelector('.list-group');
+
+var li = document.createElement('li');
+JSON.parse(localStorage.getItem(obj.email));
+li.className = 'list-group-item';
+
+li.appendChild(document.createTextNode(username + " " + email));
+list.appendChild(li);
+console.log(list);
+
 }
+

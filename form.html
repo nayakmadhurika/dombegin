@@ -7,60 +7,23 @@
     <title>Document</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
-    <style>
-        body{
-            background-image: url('https://media.istockphoto.com/id/1066358524/vector/old-off-white-beige-colored-cracked-effect-wooden-wall-texture-vector-background-horizontal.jpg?s=612x612&w=0&k=20&c=H5-vW3lyokfQ0_-77GPbl1VhmNp70qz6iu7BAbxARc8=');
-        }
-        form{
-            background-color: aliceblue;
-        }
-        h4{
-            text-align: center;
-        }
-        form{
-            text-align: center;
-            border: 2px solid yellow;
-            padding-left: 5px;
-            margin: 99px;
-            margin-top: 9px;
-        }
-        .form-control {
-            width: 99.5%;
-        }
-        input{
-            width: 400px;
-        }
-        button{
-            margin-top: -10px;
-            margin-bottom: 10px;
-        }
-        @media only screen and (max-width: 992px){
-            form{
-                width: 50%;
-            }
-            form label {
-                display: block;
-            }
-            .form-control {
-            width: 98%;
-        }
-            form input {
-                width: 80%;
-            }
-        }
-        
-    </style>
+    
 </head>
 <body>
     <div class="container">
-        <form onsubmit="storage(event)">
+        <form class="form-inline mb-3" onsubmit="storage(event)">
             <label >name</label>
             <input type="text" name="username" id="username" required><br>
             <label >emailId</label>
             <input type="email" name="emailId" id="email" required><br>
             <label >phoneNo.</label>
             <input type="tel" name="phoneno" required><br>
-            <button >submit</button>
+            <button class="btn btn-dark" >submit</button>
+
+            <ul class="list-group">
+
+
+            </ul>
           </form>
         
     </form>
