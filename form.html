@@ -12,11 +12,11 @@
 <body>
     <form onsubmit="saveToLocalStorage(event)">
         <label> Name</label>
-        <input type="text" name="username"  required/>
+        <input type="text" name="username" id="uname" required/>
         <label> EmailId</label>
-        <input type="email" name="emailId"  required/>
+        <input type="email" name="emailId" id="mail" required/>
         <label> Phone Number</label>
-        <input type="tel" name="phonenumber" />
+        <input type="tel" name="phonenumber" id="number" />
         <button> Submit </button>
     </form>
     <ul id='listOfUsers'></ul>

@@ -3,6 +3,7 @@ function saveToLocalStorage(event) {
     const name = event.target.username.value;
     const email = event.target.emailId.value;
     const phonenumber = event.target.phonenumber.value;
+
     // localStorage.setItem('name', name);
     // localStorage.setItem('email', email);
     // localStorage.setItem('phonenumber', phonenumber)
@@ -13,41 +14,39 @@ function saveToLocalStorage(event) {
     }
     localStorage.setItem(obj.email, JSON.stringify(obj))
     showNewUserOnScreen(obj)
+
+    document.getElementById('uname').value = '';
+    document.getElementById('mail').value = '';
+    document.getElementById('number').value = '';
 }
+function showNewUserOnScreen(obj){
+    const parentItem = document.getElementById('listOfUsers')
+    const childItem = document.createElement('li')
+    childItem.textContent = obj.name + " - " + obj.email + " - " + obj.phonenumber;
 
-window.addEventListener("DOMContentLoaded", () => {
-    const localStorageObj = localStorage;
-    const localstoragekeys  = Object.keys(localStorageObj)
 
-    for(var i =0; i< localstoragekeys.length; i++){
-        const key = localstoragekeys[i]
-        const userDetailsString = localStorageObj[key];
-        const userDetailsObj = JSON.parse(userDetailsString);
-        showNewUserOnScreen(userDetailsObj)
+    const deleteBtn = document.createElement('input');
+    deleteBtn.type = 'button';
+    deleteBtn.value = 'Delete';
+    deleteBtn.onclick = () => {
+        localStorage.removeItem(obj.email);
+        parentItem.removeChild(childItem);
     }
-})
 
-function showNewUserOnScreen(user){
-    const parentNode = document.getElementById('listOfUsers');
-    const childHTML = `<li id=${user.email}> ${user.name} - ${user.email}
-                            <button onclick=deleteUser('${user.email}')> Delete User </button>
-                         </li>`
+    const editBtn = document.createElement('input');
+    editBtn.type = 'button';
+    editBtn.value = 'Edit';
+    editBtn.onclick = () => {
+        document.querySelector('input[type="text"]').value  = obj.name;
+        document.querySelector('input[type="email"]').value  = obj.email;
+        document.querySelector('input[type="tel"]').value  = obj.phonenumber;
+        localStorage.removeItem(obj.email);
+        parentItem.removeChild(childItem);
 
-    parentNode.innerHTML = parentNode.innerHTML + childHTML;
-}
+    }
 
-// deleteUser('abc@gmail.com')
 
-function deleteUser(emailId){
-    console.log(emailId)
-    localStorage.removeItem(emailId);
-    removeUserFromScreen(emailId);
-
-}
-
-function removeUserFromScreen(emailId){
-    const parentNode = document.getElementById('listOfUsers');
-    const childNodeToBeDeleted = document.getElementById(emailId);
-
-    parentNode.removeChild(childNodeToBeDeleted)
+    childItem.appendChild(deleteBtn);
+    childItem.appendChild(editBtn);
+    parentItem.appendChild(childItem);
 }
