@@ -10,24 +10,16 @@
     
 </head>
 <body>
-    <div class="container">
-        <form class="form-inline mb-3" onsubmit="storage(event)">
-            <label >name</label>
-            <input type="text" name="username" id="username" required><br>
-            <label >emailId</label>
-            <input type="email" name="emailId" id="email" required><br>
-            <label >phoneNo.</label>
-            <input type="tel" name="phoneno" required><br>
-            <button class="btn btn-dark" >submit</button>
-
-            <ul class="list-group">
-
-
-            </ul>
-          </form>
-        
+    <form onsubmit="saveToLocalStorage(event)">
+        <label> Name</label>
+        <input type="text" name="username"  required/>
+        <label> EmailId</label>
+        <input type="email" name="emailId"  required/>
+        <label> Phone Number</label>
+        <input type="tel" name="phonenumber" />
+        <button> Submit </button>
     </form>
-    </div>
+    <ul id='listOfUsers'></ul>
     <script src="form.js"></script>
     
 </body>
